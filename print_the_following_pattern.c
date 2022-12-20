@@ -1,14 +1,14 @@
 #include<stdio.h>
 int main(){
-    int n,i;char ch;
+    int n,i,j;
     scanf("%d",&n);
-    int count=0;
-    for(ch='A';ch<='Z';ch++){
-        for(i=1;i<=n;i++){
-            printf("%c ",ch);
-        }printf("
+    for(i=1;i<=n;i++){
+        for(j=1;j<=n;j++){
+            if(i==j){
+                printf("0");
+            }
+            else printf("x");
+        } printf("
 ");
-        count++;
-        if(count==n)
-     break;
-}}
+    }
+}
