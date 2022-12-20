@@ -12,7 +12,7 @@ int main(){
     for(i=0;i<n;i++){
         if(a[i]%2==1 && i%2==1)
         count2++;}
-        if(count==count2)
+        if(count2==count)
         printf("True");
         else printf("False");
 }
