@@ -1,12 +1,21 @@
 #include<stdio.h>
 int main()
 {
-    int n;
+    int n,x,rem;
     scanf("%d",&n);
-    while(n%2==0)   n/=2;
-    while(n%3==0)    n/=3;
-    while(n%5==0)    n/=3;
-    
-    if(n==1)printf("Ugly Number");
+    x=n;
+    while(x%2==0)
+    {
+        x/=2;
+    }
+    while(x%3==0)
+    {
+        x/=3;
+    }
+    while(x%5==0)
+    {
+        x/=5;
+    }
+    if(x==1)printf("Ugly Number");
     else printf("Not Ugly Number");
 }
