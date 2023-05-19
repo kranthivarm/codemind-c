@@ -1,36 +1,30 @@
 #include<stdio.h>
 int main()
 {
-    int x,y;
-    scanf("%d%d",&x,&y);
-    int a[x][y],i,j,rsum=0,csum=0,rlarge=0,clarge=0;
-    for(i=0;i<x;i++)
+    int n,m,i,j,sum,rmax,cmax;
+    scanf("%d%d",&n,&m);
+    int a[n][m];
+    for(i=0;i<n;i++)
     {
-        for(j=0;j<y;j++)
+        sum=0;
+        for(j=0;j<m;j++)
         {
             scanf("%d",&a[i][j]);
+            sum+=a[i][j];
         }
+        if(i==0)rmax=sum;
+        if(sum>rmax)rmax=sum;
     }
-    for(i=0;i<x;i++)
+    for(i=0;i<m;i++)
     {
-        rsum=0;
-        for(j=0;j<y;j++)
+        sum=0;
+        for(j=0;j<n;j++)
         {
-            rsum=rsum+a[i][j];
+            sum+=a[j][i];
         }
-        if(rlarge<rsum) rlarge=rsum;
+        if(i==0)cmax=sum;
+        if(sum>cmax)cmax=sum;
     }
-    for(i=0;i<x;i++)
-    {
-        csum=0;
-        for(j=0;j<x;j++)
-        {
-            csum=csum+a[j][i];
-        }
-        if(clarge<csum) clarge=csum;
-    }
-    if(rlarge>clarge) 
-    printf("%d",rlarge);
-    else
-    printf("%d",clarge);
+    if(cmax>rmax)printf("%d",cmax);
+    else printf("%d",rmax);
 }
